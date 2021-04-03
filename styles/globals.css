@@ -190,3 +190,44 @@ button.btn-logo {
     transform: rotate(360deg);
   }
 }
+
+/* Utilities */
+
+.push-left {
+  margin-left: auto;
+}
+
+.text-sm {
+  font-size: 0.85rem;
+}
+
+.text-danger {
+  font-weight: bold;
+  color: var(--color-red);
+}
+
+.text-success {
+  font-weight: bold;
+  color: var(--color-green);
+}
+
+.text-info {
+  font-weight: bold;
+  color: var(--color-blue);
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-center {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
