@@ -3,6 +3,7 @@ import PostFeed from "@components/PostFeed";
 import { getUserWithUsername, postToJSON } from "@lib/firebase";
 
 export async function getServerSideProps({ query }) {
+  console.log(query);
   const { username } = query;
 
   const userDoc = await getUserWithUsername(username);
