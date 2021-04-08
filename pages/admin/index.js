@@ -78,7 +78,7 @@ function CreateNewPost() {
     toast.success("Post Created!");
 
     // Imprerative navigation after doc is set
-    // router.push(`/admin/${slug}`);
+    router.push(`/admin/${slug}`);
   };
 
   return (
