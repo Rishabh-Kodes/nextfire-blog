@@ -1,6 +1,7 @@
 import styles from "@styles/Admin.module.css";
 import AuthCheck from "@components/AuthCheck";
 import PostFeed from "components/PostFeed";
+import Metatags from "@components/Metatags";
 import { UserContext } from "@lib/context";
 import { firestore, auth, serverTimestamp } from "@lib/firebase";
 
@@ -34,6 +35,7 @@ function PostList() {
 
   return (
     <>
+      <Metatags title="Manage your posts" description="Manage your posts" />
       <h1>Manage your posts</h1>
       <PostFeed posts={posts} admin />
     </>

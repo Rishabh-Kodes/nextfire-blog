@@ -5,6 +5,7 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import PostContent from "@components/PostContent";
 import AuthCheck from "@components/AuthCheck";
 import HeartButton from "@components/HeartButton";
+import Metatags from "@components/Metatags";
 import { useContext } from "react";
 import { UserContext } from "@lib/context";
 
@@ -54,6 +55,8 @@ export default function Post(props) {
 
   return (
     <main className={styles.container}>
+      <Metatags title={post.title} description={post.title} />
+
       <section>
         <PostContent post={post} />
       </section>

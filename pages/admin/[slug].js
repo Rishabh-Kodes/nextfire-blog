@@ -2,6 +2,7 @@ import styles from "@styles/Admin.module.css";
 import AuthCheck from "@components/AuthCheck";
 import { firestore, auth, serverTimestamp } from "@lib/firebase";
 import ImageUploader from "@components/ImageUploader";
+import Metatags from "@components/Metatags";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -36,6 +37,8 @@ function PostManager() {
     <main className={styles.container}>
       {post && (
         <>
+          <Metatags title={post.title} description={post.title} />
+
           <section>
             <h1>{post.title}</h1>
             <p>ID: {post.slug}</p>

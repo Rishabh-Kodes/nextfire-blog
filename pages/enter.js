@@ -2,12 +2,17 @@ import { debounce } from "lodash";
 import { useContext, useState, useEffect, useCallback } from "react";
 import { UserContext } from "@lib/context";
 import { auth, firestore, googleAuthProvider } from "@lib/firebase";
+import Metatags from "@components/Metatags";
 
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
 
   return (
     <main>
+      <Metatags
+        title="Sign Up"
+        description="Sign up and create some awesome blogs."
+      />
       {user ? (
         !username ? (
           <UsernameForm />
