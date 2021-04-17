@@ -130,6 +130,12 @@ function DeletePostButton({ postRef }) {
   const deletePost = async () => {
     const doIt = confirm("are you sure!");
     if (doIt) {
+      // Clear heart collection
+      const batch = firestore.batch();
+      const snapshot = await postRef.collection("hearts").get();
+      snapshot.docs.map((doc) => batch.delete(doc.ref));
+      await batch.commit();
+
       await postRef.delete();
       router.push("/admin");
       toast("Post deleted ", { icon: "🗑️" });
